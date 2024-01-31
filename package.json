@@ -1,0 +1,20 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "creating BraingGaming",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": " "
+  },
+
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
+  
+  "keywords": [
+    "console"
+  ],
+  "author": "Aktan",
+  "license": "ISC"
+}
