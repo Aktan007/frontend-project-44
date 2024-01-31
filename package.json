@@ -7,14 +7,15 @@
   "scripts": {
     "test": " "
   },
-
   "bin": {
     "brain-games": "bin/brain-games.js"
   },
-  
   "keywords": [
     "console"
   ],
   "author": "Aktan",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }

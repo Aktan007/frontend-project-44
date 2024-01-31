@@ -1,6 +1,13 @@
 #!/usr/bin/env node
+import readlineSync from 'readline-sync';
+
+
+console.log('Welcome to the Brain games!');
+const name = readlineSync.question('May I have your name?');
+console.log(`Hello, ${name}!`)
 
 
 
 
-console.log('hello Janbery');
+
+// sudo apt-get install npm
