@@ -3,8 +3,6 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/89cf42223db8fbb84452/maintainability)](https://codeclimate.com/github/Aktan007/frontend-project-44/maintainability)
 
-Brain-even
 ![Alt text](image.png)
 
-Brain-calc
 ![Alt text](image.png)
