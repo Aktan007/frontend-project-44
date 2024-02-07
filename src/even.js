@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import meeting from './index.js';
+import getMeeting from './index.js';
 
 const starting = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -29,7 +29,7 @@ const questionBlock = () => {
 };
 
 const game = () => {
-  const userName = meeting();
+  const userName = getMeeting();
   starting();
   let i = 0;
   let result = true;
