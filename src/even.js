@@ -1,13 +1,9 @@
 import readlineSync from 'readline-sync';
-import getMeeting from './index.js';
+import meeting from './cli.js';
+import getRandomNum from './utils.js';
 
 const starting = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
-};
-
-const getRandomNum = (n = 10) => {
-  const num = Math.random() * n;
-  return Math.ceil(num);
 };
 
 const questionBlock = () => {
@@ -29,7 +25,7 @@ const questionBlock = () => {
 };
 
 const game = () => {
-  const userName = getMeeting();
+  const userName = meeting();
   starting();
   let i = 0;
   let result = true;
