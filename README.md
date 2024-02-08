@@ -11,3 +11,6 @@ Brain-calc
 
 Brain-gcd
 ![Alt text](img/image3.png)
+
+Brain-progression
+![Alt text](img/image4.png)
