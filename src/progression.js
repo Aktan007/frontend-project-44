@@ -38,7 +38,7 @@ const questionBlockProgression = () => {
     console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
     return false;
   }
-  
+
   console.log('Correct!');
   return true;
 };
