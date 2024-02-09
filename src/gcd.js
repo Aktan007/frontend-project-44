@@ -2,9 +2,8 @@ import readlineSync from 'readline-sync';
 import getRandomNum from './utils.js';
 import meeting from './cli.js';
 
-const gameDescription9 = () => {
-  'Find the greatest common divisor of given numbers.';
-};
+const gameDescription9 = () => console.log('Find the greatest common divisor of given numbers.');
+
 
 const getGcd = (firstValue, secondValue) => {
   if (!secondValue) {
