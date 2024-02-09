@@ -14,3 +14,6 @@ Brain-gcd
 
 Brain-progression
 ![Alt text](img/image4.png)
+
+Brain-prime
+![Alt text](img/image5.png)
