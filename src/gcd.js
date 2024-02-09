@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import getRandomNum from './utils.js';
 import meeting from './cli.js';
 
-const gameDescription = () => {
+const gameDescription9 = () => {
   'Find the greatest common divisor of given numbers.';
 };
 
@@ -38,7 +38,7 @@ const questionBlockGCD = () => {
 
 const gameGCD = () => {
   const userName = meeting();
-  gameDescription();
+  gameDescription9();
   let i = 0;
   let result = true;
 
