@@ -33,6 +33,6 @@ const getGameData8 = () => {
   return [question, correctAnswer];
 };
 
-const  startCalc = () => runGame(gameDescription8, getGameData8);
+const startCalc = () => runGame(gameDescription8, getGameData8);
 
 export default startCalc;
