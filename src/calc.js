@@ -1,10 +1,7 @@
-import readlineSync from 'readline-sync';
 import getRandomNum from './utils.js';
-import meeting from './cli.js';
+import runGame from './index.js';
 
-const gameDescription = () => {
-  console.log('What is the result of the expression?');
-};
+const gameDescription8 = 'What is the result of the expression?';
 
 const calculateAnswer = (firstValue, secondValue, operator) => {
   let result = null;
@@ -25,7 +22,7 @@ const calculateAnswer = (firstValue, secondValue, operator) => {
   return result;
 };
 
-const getGameData = () => {
+const getGameData8 = () => {
   const number1 = getRandomNum(1, 20);
   const number2 = getRandomNum(1, 20);
   const operators = ['+', '-', '*'];
@@ -36,36 +33,6 @@ const getGameData = () => {
   return [question, correctAnswer];
 };
 
-const questionBlockCalc = () => {
-  const [question, correctAnswer] = getGameData();
-  console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+const  startCalc = () => runGame(gameDescription8, getGameData8);
 
-  if (correctAnswer !== userAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return false;
-  }
-
-  console.log('Correct!');
-  return true;
-};
-
-const startGame = () => {
-  const userName = meeting();
-  gameDescription();
-  let i = 0;
-  let result = true;
-
-  while (result && i < 3) {
-    result = questionBlockCalc();
-    i += 1;
-  }
-
-  if (result) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
-};
-
-export default startGame;
+export default startCalc;
