@@ -17,9 +17,9 @@ const getProgression = (start, step, length) => {
 };
 
 const getGame1 = () => {
-  const start = getRandomNum(5);
-  const step = getRandomNum(5);
-  const length = getRandomNum(15);
+  const start = getRandomNum(0, 5);
+  const step = getRandomNum(1, 5);
+  const length = getRandomNum(10, 15);
   const progression = getProgression(start, step, length);
   const hiddenNumber = getRandomNum(0, progression.length - 1);
   const correctAn = progression[hiddenNumber].toString();

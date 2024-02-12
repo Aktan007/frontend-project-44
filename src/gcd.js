@@ -4,7 +4,6 @@ import meeting from './cli.js';
 
 const gameDescription9 = () => console.log('Find the greatest common divisor of given numbers.');
 
-
 const getGcd = (firstValue, secondValue) => {
   if (!secondValue) {
     return firstValue;
@@ -13,8 +12,8 @@ const getGcd = (firstValue, secondValue) => {
 };
 
 const getGame = () => {
-  const num1 = getRandomNum(100);
-  const num2 = getRandomNum(100);
+  const num1 = getRandomNum(1, 100);
+  const num2 = getRandomNum(1, 100);
   const question1 = `${num1} ${num2}`;
   const correctAns = getGcd(num1, num2).toString();
 

@@ -26,8 +26,8 @@ const calculateAnswer = (firstValue, secondValue, operator) => {
 };
 
 const getGameData = () => {
-  const number1 = getRandomNum(20);
-  const number2 = getRandomNum(20);
+  const number1 = getRandomNum(1, 20);
+  const number2 = getRandomNum(1, 20);
   const operators = ['+', '-', '*'];
   const operator = operators[getRandomNum(0, operators.length - 1)];
   const question = `${number1} ${operator} ${number2}`;
