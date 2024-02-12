@@ -1,45 +1,16 @@
-import readlineSync from 'readline-sync';
-import meeting from './cli.js';
-import getRandomNum from './utils.js';
+import runGame from '../index.js';
+import getRandomNum from '../utils.js';
 
-const starting = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const gameDescription = 'Answer "yes" if the number is even, otherwise answer "no".';
+
+const isEven = (number) => number % 2 === 0;
+
+const getGameData = () => {
+  const randomNumber = getRandomNum(1, 100);
+  const correctAnswer = isEven(randomNumber) ? 'yes' : 'no';
+  return [randomNumber, correctAnswer];
 };
 
-const questionBlock = () => {
-  const number = getRandomNum(20);
-  console.log(`Question: ${number}`);
-  let expectedAnswer = '';
-  if (number % 2 === 0) {
-    expectedAnswer = 'yes';
-  } else {
-    expectedAnswer = 'no';
-  }
-  const userAnswer = readlineSync.question('Your answer: ');
-  if (expectedAnswer !== userAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${expectedAnswer}'.`);
-    return false;
-  }
-  console.log('Correct!');
-  return true;
-};
+const startGame = () => runGame(gameDescription, getGameData);
 
-const game = () => {
-  const userName = meeting();
-  starting();
-  let i = 0;
-  let result = true;
-
-  while (result && i < 3) {
-    result = questionBlock();
-    i += 1;
-  }
-
-  if (result) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
-};
-
-export default game;
+export default startGame;
