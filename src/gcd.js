@@ -1,8 +1,7 @@
-import readlineSync from 'readline-sync';
+import runGame from './index.js';
 import getRandomNum from './utils.js';
-import meeting from './cli.js';
 
-const gameDescription9 = () => console.log('Find the greatest common divisor of given numbers.');
+const gameDescription9 = 'Find the greatest common divisor of given numbers.';
 
 const getGcd = (firstValue, secondValue) => {
   if (!secondValue) {
@@ -20,36 +19,6 @@ const getGame = () => {
   return [question1, correctAns];
 };
 
-const questionBlockGCD = () => {
-  const [question, correctAnswer] = getGame();
-  console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+const startGCD = () => runGame(gameDescription9, getGame);
 
-  if (correctAnswer !== userAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return false;
-  }
-
-  console.log('Correct!');
-  return true;
-};
-
-const gameGCD = () => {
-  const userName = meeting();
-  gameDescription9();
-  let i = 0;
-  let result = true;
-
-  while (result && i < 3) {
-    result = questionBlockGCD();
-    i += 1;
-  }
-
-  if (result) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
-};
-
-export default gameGCD;
+export default startGCD;
