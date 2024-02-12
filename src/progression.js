@@ -1,10 +1,7 @@
-import readlineSync from 'readline-sync';
 import getRandomNum from './utils.js';
-import meeting from './cli.js';
+import runGame from './index.js';
 
-const gameDescription3 = () => {
-  console.log('What number is missing in the progression?');
-};
+const gameDescription7 = 'What number is missing in the progression?';
 
 const getProgression = (start, step, length) => {
   const progression = [];
@@ -16,49 +13,19 @@ const getProgression = (start, step, length) => {
   return progression;
 };
 
-const getGame1 = () => {
+const getGameData7 = () => {
   const start = getRandomNum(0, 5);
   const step = getRandomNum(1, 5);
   const length = getRandomNum(10, 15);
   const progression = getProgression(start, step, length);
   const hiddenNumber = getRandomNum(0, progression.length - 1);
-  const correctAn = progression[hiddenNumber].toString();
+  const correctAnswer = progression[hiddenNumber].toString();
   progression[hiddenNumber] = '..';
-  const question2 = progression.join(' ');
+  const question = progression.join(' ');
 
-  return [question2, correctAn];
+  return [question, correctAnswer];
 };
 
-const questionBlockProgression = () => {
-  const [question, correctAnswer] = getGame1();
-  console.log(`Question: ${question}`);
-  const userAnswer = readlineSync.question('Your answer: ');
+const startGame = () => runGame(gameDescription7, getGameData7);
 
-  if (correctAnswer !== userAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-    return false;
-  }
-
-  console.log('Correct!');
-  return true;
-};
-
-const gameProgression = () => {
-  const userName = meeting();
-  gameDescription3();
-  let i = 0;
-  let result = true;
-
-  while (result && i < 3) {
-    result = questionBlockProgression();
-    i += 1;
-  }
-
-  if (result) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
-};
-
-export default gameProgression;
+export default startGame;

@@ -10,7 +10,7 @@ const runGame = (gameDescription, getGameData) => {
 
   for (let i = 0; i < countRounds; i += 1) {
     const gameData = getGameData();
-    const question = Number(gameData[0]);
+    const question = gameData[0];
     const correctAnswer = gameData[1];
     console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
